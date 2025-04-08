@@ -19,7 +19,11 @@ function Accordion({ text, list, isOpenInitially = false }: AccordionProps) {
     return (
         <div>
             <h4
-                className='text-2xl font-bold cursor-pointer mb-2.5 hover:text-gray-600 transition-colors delay-100 duration-300 ease-in-out'
+                className={`
+                  mb-2.5 cursor-pointer text-2xl font-bold transition-colors
+                  delay-100 duration-300 ease-in-out
+                  hover:text-gray-600
+                `}
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {text}
@@ -28,7 +32,11 @@ function Accordion({ text, list, isOpenInitially = false }: AccordionProps) {
                 <div className='mb-5 flex flex-col'>
                     {!isBlend && (
                         <input
-                            className='border-2 border-gray-400 rounded-md p-2.5 mb-2.5 sm:w-full md:w-1/2'
+                            className={`
+                              mb-2.5 rounded-md border-2 border-gray-400 p-2.5
+                              sm:w-full
+                              md:w-1/2
+                            `}
                             value={searchString}
                             onChange={(e) => {
                                 updateSearchString(e.target.value);
@@ -52,7 +60,6 @@ function Accordion({ text, list, isOpenInitially = false }: AccordionProps) {
             )}
         </div>
     );
-
 };
 
 export default Accordion;

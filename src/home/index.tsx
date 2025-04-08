@@ -25,7 +25,11 @@ function Home() {
     }, []);
 
     return (
-        <div className='m-1.5 md:m-2.5 lg:m-5 text-gray-800'>
+        <div className={`
+          m-1.5 text-gray-800
+          md:m-2.5
+          lg:m-5
+        `}>
             <Header text='Spice and Blend List' />
             <Accordion text="Spice List" list={spices} />
             <Accordion text="Blend List" list={blends} />

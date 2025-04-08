@@ -3,6 +3,8 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
+import eslintParserTypeScript from "@typescript-eslint/parser";
+import eslintPluginReadableTailwind from "eslint-plugin-readable-tailwind";
 
 export default tseslint.config(
   { ignores: ['dist', 'public'] },
@@ -12,10 +14,20 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parser: eslintParserTypeScript,
+      parserOptions: {
+        project: true
+      },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
+      }
     },
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      "readable-tailwind": eslintPluginReadableTailwind
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -23,6 +35,10 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      // enable all recommended rules to warn
+      ...eslintPluginReadableTailwind.configs.warning.rules,
+      // enable all recommended rules to error
+      ...eslintPluginReadableTailwind.configs.error.rules,
     },
   },
 );
