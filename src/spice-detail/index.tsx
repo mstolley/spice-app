@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import type { Spice } from '../types';
+import { Header } from '../components/Header';
 
 const SpiceDetail = () => {
   const { id } = useParams();
@@ -17,8 +18,8 @@ const SpiceDetail = () => {
   }, [id]);
 
   return (
-    <div>
-      <h2>Spice Detail Page</h2>
+    <div className='m-1.5 md:m-2.5 lg:m-5 text-gray-800'>
+      <Header text={`Spice - ${spice?.name}`} />
       {spice && (
         <div>
           <div>Spice Name: {spice.name}</div>

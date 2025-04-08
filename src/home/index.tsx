@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Blend, Spice } from '../types';
-import { useEffect, useState } from 'react';
+import { Header } from '../components/Header';
 
 function Home() {
     const [spices, setSpices] = useState<Spice[]>([]);
@@ -27,10 +28,11 @@ function Home() {
     }, []);
 
     return (
-        <div className='m-1.5 md:m-2.5 lg:m-5'>
+        <div className='m-1.5 md:m-2.5 lg:m-5 text-gray-800'>
+            <Header text='Spice and Blend List' />
             <div>
                 <h4
-                    className='text-3xl font-bold cursor-pointer mb-2.5'
+                    className='text-2xl font-bold cursor-pointer mb-2.5 hover:text-gray-600 transition-colors delay-100 duration-300 ease-in-out'
                     onClick={() => setIsSpicesOpen(!isSpicesOpen)}
                 >
                     Spice List
@@ -38,7 +40,7 @@ function Home() {
                 {isSpicesOpen && (
                     <div className='mb-5 flex flex-col'>
                         <input
-                            className='border-2 border-gray-300 rounded-md p-2 mb-2 sm:w-full md:w-1/2'
+                            className='border-2 border-gray-400 rounded-md p-2.5 mb-2.5 sm:w-full md:w-1/2'
                             value={searchString}
                             onChange={(e) => {
                                 updateSearchString(e.target.value);
@@ -63,7 +65,7 @@ function Home() {
 
             <div>
                 <h4
-                    className='text-3xl font-bold cursor-pointer mb-2.5'
+                    className='text-2xl font-bold cursor-pointer mb-2.5 hover:text-gray-600 transition-colors delay-100 duration-300 ease-in-out'
                     onClick={() => setIsBlendsOpen(!isBlendsOpen)}
                 >
                     Blend List
