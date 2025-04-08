@@ -37,6 +37,7 @@ function Accordion({ text, list, isOpenInitially = false }: AccordionProps) {
                               sm:w-full
                               md:w-1/2
                             `}
+                            placeholder='Search Spices'
                             value={searchString}
                             onChange={(e) => {
                                 updateSearchString(e.target.value);
