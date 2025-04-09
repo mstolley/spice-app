@@ -21,9 +21,9 @@ function Home() {
             setBlends(blends);
         }
 
-        fetchSpices();
-        fetchBlends();
-    }, [setSpices, setBlends]);
+        if (!spices || spices.length === 0) fetchSpices();
+        if (!blends || blends.length === 0) fetchBlends();
+    }, [blends, spices, setSpices, setBlends]);
 
     return (
         <div className={`
@@ -32,8 +32,8 @@ function Home() {
           lg:m-5
         `}>
             <Header text='Spice and Blend List' />
-            <Accordion text="Spice List" list={spices} />
-            <Accordion text="Blend List" list={blends} />
+            <Accordion text='Spice List' list={spices} />
+            <Accordion text='Blend List' list={blends} />
         </div>
     );
 }

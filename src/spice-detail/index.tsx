@@ -40,18 +40,26 @@ function SpiceDetail() {
             <Header text={`Spice - ${spice?.name}`} />
             {spice && (
                 <div>
-                    <div>Spice Name: {spice.name}</div>
-                    <div>Spice Color:
+                    <div className='mb-1'>
+                        <span className='mr-1 font-bold'>Spice Name:</span> {spice.name || 'None Provided'}
+                    </div>
+                    <div className='mb-1'>
+                        <span className='mr-1 font-bold'>Spice Color:</span>
                         <span
                             className={`
-                              mr-1 ml-1 w-4 rounded-xs pt-1 pr-2.5 pb-1 pl-2.5
-                              text-white
+                              mr-1 w-4 rounded-xs pt-1 pr-2.5 pb-1 pl-2.5
+                              ${spice.color.length === 6
+                                    ? `text-white` : `text-red-500`}
                             `}
                             style={{ backgroundColor: `#${spice.color}` }}
-                        >{spice.color}</span>
+                        >{spice.color.length === 6 ? spice.color : `${spice.color} (incorrect value)`}</span>
                     </div>
-                    <div>Spice Cost: {spice.price}</div>
-                    <div>Spice Heat Level: {spice.heat}</div>
+                    <div className='mb-1'>
+                        <span className='mr-1 font-bold'>Spice Cost:</span> {spice.price || 'None Provided'}
+                    </div>
+                    <div className='mb-1'>
+                        <span className='mr-1 font-bold'>Spice Heat Level:</span> {spice.heat || 'None Provided'}
+                    </div>
                 </div>
             )}
         </div>
