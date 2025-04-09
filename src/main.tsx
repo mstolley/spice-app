@@ -8,45 +8,45 @@ import BlendDetail from './blend-detail/index.tsx';
 import { DataProvider } from './context/DataProvider';
 
 async function enableMocking() {
-    const { worker } = await import('./mocks/browser');
+  const { worker } = await import('./mocks/browser');
 
-    return worker.start();
+  return worker.start();
 }
 
 const router = createBrowserRouter(
-    [
-        {
-            path: '/',
-            element: <Home />,
-            errorElement: <Home />,
-        },
-        {
-            path: '/spices/:id',
-            element: <SpiceDetail />,
-        },
-        {
-            path: '/blends/:id',
-            element: <BlendDetail />,
-        },
-    ],
+  [
     {
-        future: {
-            v7_relativeSplatPath: true,
-        },
+      path: '/',
+      element: <Home />,
+      errorElement: <Home />,
     },
+    {
+      path: '/spices/:id',
+      element: <SpiceDetail />,
+    },
+    {
+      path: '/blends/:id',
+      element: <BlendDetail />,
+    },
+  ],
+  {
+    future: {
+      v7_relativeSplatPath: true,
+    },
+  },
 );
 
 enableMocking().then(() => {
-    createRoot(document.getElementById('root')!).render(
-        <StrictMode>
-            <DataProvider>
-                <RouterProvider
-                    future={{
-                        v7_startTransition: true,
-                    }}
-                    router={router}
-                />
-            </DataProvider>
-        </StrictMode>,
-    );
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <DataProvider>
+        <RouterProvider
+          future={{
+            v7_startTransition: true,
+          }}
+          router={router}
+        />
+      </DataProvider>
+    </StrictMode>,
+  );
 });

@@ -22,12 +22,12 @@ export const handlers = [
     return HttpResponse.json(mockBlends());
   }),
   http.post('/api/v1/blends', async ({ request }) => {
-    let requestData = await request.json() as Blend;
+    let requestData = (await request.json()) as Blend;
 
     requestData = {
       ...requestData,
       id: blendsData.length,
-    }
+    };
 
     blendsData.push(requestData);
 
