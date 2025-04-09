@@ -81,35 +81,35 @@ function Home() {
               sm:w-full
               md:w-1/2
             `}>
-                <h2 className="mb-3 text-xl font-bold">Add a New Blend</h2>
-                <div className="mb-3">
-                    <label htmlFor="blendName" className={`
+                <h2 className='mb-3 text-xl font-bold'>Add a New Blend</h2>
+                <div className='mb-3'>
+                    <label htmlFor='blendName' className={`
                       mb-1 block font-medium
                     `}>Blend Name:</label>
                     <input
-                        id="blendName"
-                        type="text"
+                        id='blendName'
+                        type='text'
                         value={newBlendName}
                         onChange={(e) => setNewBlendName(e.target.value)}
-                        className="w-full rounded-md border p-2"
-                        placeholder="Enter blend name"
+                        className='w-full rounded-md border p-2'
+                        placeholder='Enter blend name'
                         required
                     />
                 </div>
-                <div className="mt-3">
-                    <h2 className="mb-3 text-xl font-bold">Select Blends</h2>
-                    <div className="mb-3">
-                        <label htmlFor="blend1" className={`
+                <div className='mt-3'>
+                    <h2 className='mb-3 text-xl font-bold'>Select Blends</h2>
+                    <div className='mb-3'>
+                        <label htmlFor='blend1' className={`
                           mb-1 block font-medium
                         `}>Blend 1:</label>
                         <select
-                            id="blend1"
+                            id='blend1'
                             value={selectedBlend1 ?? ''}
                             onChange={(e) => setSelectedBlend1(e.target.value ? parseInt(e.target.value, 10) : null)}
-                            className="w-full rounded-md border p-2"
+                            className='w-full rounded-md border p-2'
                             required
                         >
-                            <option value="" disabled>Select a blend</option>
+                            <option value='' disabled>Select a blend</option>
                             {blends
                                 .filter(blend => blend.id !== selectedBlend2)
                                 .map(blend => (
@@ -119,18 +119,19 @@ function Home() {
                                 ))}
                         </select>
                     </div>
-                    <div className="mb-3">
-                        <label htmlFor="blend2" className={`
-                          mb-1 block font-medium
-                        `}>Blend 2:</label>
+                    <div className='mb-3'>
+                        <label
+                            htmlFor='blend2'
+                            className={`mb-1 block font-medium`}
+                        >Blend 2:</label>
                         <select
-                            id="blend2"
+                            id='blend2'
                             value={selectedBlend2 ?? ''}
                             onChange={(e) => setSelectedBlend2(e.target.value ? parseInt(e.target.value, 10) : null)}
-                            className="w-full rounded-md border p-2"
+                            className='w-full rounded-md border p-2'
                             required
                         >
-                            <option value="" disabled>Select a blend</option>
+                            <option value='' disabled>Select a blend</option>
                             {blends
                                 .filter(blend => blend.id !== selectedBlend1)
                                 .map(blend => (
@@ -141,9 +142,9 @@ function Home() {
                         </select>
                     </div>
                 </div>
-                {error && <p className="mb-3 text-red-500">{error}</p>}
+                {error && <p className='mb-3 text-red-500'>{error}</p>}
                 <button
-                    type="submit"
+                    type='submit'
                     className={`
                       rounded-md bg-blue-500 px-4 py-2 text-white
                       transition-colors delay-100 duration-300 ease-in-out
