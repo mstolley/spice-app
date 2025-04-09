@@ -25,6 +25,8 @@ function SpiceDetail() {
             } else {
                 fetchSpice();
             }
+        } else {
+            fetchSpice();
         }
 
     }, [id, spices]);
@@ -39,7 +41,15 @@ function SpiceDetail() {
             {spice && (
                 <div>
                     <div>Spice Name: {spice.name}</div>
-                    <div>Spice Color: {spice.color}</div>
+                    <div>Spice Color:
+                        <span
+                            className={`
+                              mr-1 ml-1 w-4 rounded-xs pt-1 pr-2.5 pb-1 pl-2.5
+                              text-white
+                            `}
+                            style={{ backgroundColor: `#${spice.color}` }}
+                        >{spice.color}</span>
+                    </div>
                     <div>Spice Cost: {spice.price}</div>
                     <div>Spice Heat Level: {spice.heat}</div>
                 </div>

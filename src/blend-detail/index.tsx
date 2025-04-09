@@ -25,6 +25,8 @@ const BlendDetail = () => {
             } else {
                 fetchBlend();
             }
+        } else {
+            fetchBlend();
         }
 
     }, [id, blends]);
