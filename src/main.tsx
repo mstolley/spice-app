@@ -40,7 +40,12 @@ enableMocking().then(() => {
     createRoot(document.getElementById('root')!).render(
         <StrictMode>
             <DataProvider>
-                <RouterProvider router={router} />
+                <RouterProvider
+                    future={{
+                        v7_startTransition: true,
+                    }}
+                    router={router}
+                />
             </DataProvider>
         </StrictMode>,
     );
