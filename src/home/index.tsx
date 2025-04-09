@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { useDataContext } from '@/hooks/useDataContext';
-import { Header } from '@/components/Header';
-import { Accordion } from '@/components/Accordion';
+import { useDataContext } from '../hooks/useDataContext';
+import { Header } from '../components/Header';
+import { Accordion } from '../components/Accordion';
 
 function Home() {
     const { spices, blends, setSpices, setBlends } = useDataContext();

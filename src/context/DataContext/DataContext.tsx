@@ -1,5 +1,5 @@
-import React, { createContext } from 'react';
-import type { Blend, Spice } from '@/types';
+import { createContext } from 'react';
+import type { Blend, Spice } from '../../types';
 
 interface DataContextType {
     spices: Spice[];

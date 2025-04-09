@@ -1,11 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { DataProvider } from '@/context/DataProvider';
-import '@/main.css';
-import Home from '@/home/index.tsx';
-import SpiceDetail from '@/spice-detail/index.tsx';
-import BlendDetail from '@/blend-detail/index.tsx';
+import './main.css';
+import Home from './home/index.tsx';
+import SpiceDetail from './spice-detail/index.tsx';
+import BlendDetail from './blend-detail/index.tsx';
+import { DataProvider } from './context/DataProvider';
 
 async function enableMocking() {
     const { worker } = await import('./mocks/browser');

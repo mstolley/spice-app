@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import type { Blend } from '@/types';
-import { useDataContext } from '@/hooks/useDataContext';
-import { Header } from '@/components/Header';
+import type { Blend } from '../types';
+import { useDataContext } from '../hooks/useDataContext';
+import { Header } from '../components/Header';
 
 const BlendDetail = () => {
     const { blends } = useDataContext();

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DataContext } from "../DataContext";
-import { Spice, Blend } from "@/types";
+import { Spice, Blend } from "../../types";
 
 const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [spices, setSpices] = useState<Spice[]>([]);

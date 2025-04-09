@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import type { Spice } from '@/types';
-import { useDataContext } from '@/hooks/useDataContext';
-import { Header } from '@/components/Header';
+import type { Spice } from '../types';
+import { useDataContext } from '../hooks/useDataContext';
+import { Header } from '../components/Header';
 
 function SpiceDetail() {
     const { spices } = useDataContext();
