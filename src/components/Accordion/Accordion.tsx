@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import type { Blend, Spice } from '../../types';
+import type { Blend, Spice } from '@/types';
 
 interface AccordionProps {
     text: string;

@@ -1,10 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './main.css';
-import Home from './home/index.tsx';
-import SpiceDetail from './spice-detail/index.tsx';
-import BlendDetail from './blend-detail/index.tsx';
+import { DataProvider } from '@/context/DataProvider';
+import '@/main.css';
+import Home from '@/home/index.tsx';
+import SpiceDetail from '@/spice-detail/index.tsx';
+import BlendDetail from '@/blend-detail/index.tsx';
 
 async function enableMocking() {
     const { worker } = await import('./mocks/browser');
@@ -38,7 +39,9 @@ const router = createBrowserRouter(
 enableMocking().then(() => {
     createRoot(document.getElementById('root')!).render(
         <StrictMode>
-            <RouterProvider router={router} future={{ v7_startTransition: true }} />
+            <DataProvider>
+                <RouterProvider router={router} />
+            </DataProvider>
         </StrictMode>,
     );
 });

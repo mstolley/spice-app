@@ -1,28 +1,29 @@
-import { useEffect, useState } from 'react';
-import type { Blend, Spice } from '../types';
-import { Header } from '../components/Header';
-import { Accordion } from '../components/Accordion';
+import { useEffect } from 'react';
+import { useDataContext } from '@/hooks/useDataContext';
+import { Header } from '@/components/Header';
+import { Accordion } from '@/components/Accordion';
 
 function Home() {
-    const [spices, setSpices] = useState<Spice[]>([]);
-    const [blends, setBlends] = useState<Blend[]>([]);
+    const { spices, blends, setSpices, setBlends } = useDataContext();
 
     useEffect(() => {
         async function fetchSpices() {
             const spicesResponse = await fetch('/api/v1/spices');
             const spices = await spicesResponse.json();
+
             setSpices(spices);
         }
 
         async function fetchBlends() {
             const blendsResponse = await fetch('/api/v1/blends');
             const blends = await blendsResponse.json();
+
             setBlends(blends);
         }
 
         fetchSpices();
         fetchBlends();
-    }, []);
+    }, [setSpices, setBlends]);
 
     return (
         <div className={`
