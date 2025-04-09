@@ -17,7 +17,7 @@ function Accordion({ text, list, isOpenInitially = false }: AccordionProps) {
     const isBlend = list.length > 0 && 'spices' in list[0];
 
     return (
-        <div>
+        <div data-testid='accordion'>
             <h4
                 className={`
                   mb-2.5 cursor-pointer text-2xl font-bold transition-colors
