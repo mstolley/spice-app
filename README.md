@@ -1,4 +1,4 @@
-# Tomo Spice Blend Take Home Challenge
+# Spice Blend Take Home Challenge
 
 FIRST: thank you so much for investing time and energy into this process with us. We're very grateful!
 
