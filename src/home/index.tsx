@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDataContext } from '../hooks/useDataContext';
 import { Header } from '../components/Header';
 import { Accordion } from '../components/Accordion';
+import { Button } from '../components/Button';
 
 function Home() {
   const { spices, blends, setSpices, setBlends } = useDataContext();
@@ -165,16 +166,7 @@ function Home() {
           </div>
         </div>
         {error && <p className="mb-3 text-red-500">{error}</p>}
-        <button
-          type="submit"
-          className={`
-            rounded-md bg-blue-500 px-4 py-2 text-white transition-colors
-            delay-100 duration-300 ease-in-out
-            hover:bg-blue-600
-          `}
-        >
-          Add Blend
-        </button>
+        <Button text='Add Blend' type='submit' testId='button-home' />
       </form>
     </div>
   );
