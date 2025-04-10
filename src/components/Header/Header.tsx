@@ -12,8 +12,9 @@ function Header({ text = 'Spice App' }: HeaderProps) {
       <header
         data-testid='header'
         className={`
-          mb-2.5 h-14 w-full rounded-lg bg-gray-600 p-2.5 text-center text-xl
+          mb-2.5 h-14 w-full rounded-lg bg-gray-600 p-2.5 text-center text-lg
           text-gray-100 shadow-sm shadow-gray-600
+          md:text-xl
           lg:text-3xl
         `}
       >

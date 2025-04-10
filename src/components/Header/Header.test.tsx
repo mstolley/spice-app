@@ -37,7 +37,7 @@ describe('Header Component', () => {
     const headerElement = screen.getByTestId('header');
 
     expect(headerElement).toHaveClass(
-      'mb-2.5 h-14 w-full rounded-lg bg-gray-600 p-2.5 text-center text-xl text-gray-100 shadow-sm shadow-gray-600 lg:text-3xl',
+      'mb-2.5 h-14 w-full rounded-lg bg-gray-600 p-2.5 text-center text-lg text-gray-100 shadow-sm shadow-gray-600 md:text-xl lg:text-3xl',
     );
   });
 });
