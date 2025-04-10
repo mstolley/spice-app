@@ -1,6 +1,6 @@
 import { useLocation, Link } from 'react-router-dom';
 interface HeaderProps {
-  text: string;
+  text?: string;
 }
 
 function Header({ text = 'Spice App' }: HeaderProps) {
@@ -32,7 +32,6 @@ function Header({ text = 'Spice App' }: HeaderProps) {
       )}
     </>
   );
-
 }
 
 export default Header;
